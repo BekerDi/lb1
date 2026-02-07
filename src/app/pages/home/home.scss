@@ -1,0 +1,27 @@
+.home {
+  min-height: 100vh;
+  background-color: #EDE4AB;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  text-align: center;
+}
+
+h1 {
+  font-size: 70px;
+  color: #AD3C1B;
+  margin-bottom: 30px;
+}
+
+p {
+  color: #AD3C1B;
+  font-size: 35px;
+  margin-bottom: 40px;
+}
+
+.navigation a {
+  font-size: 40px;
+  margin: 0 20px;
+  top: 20px;
+}
