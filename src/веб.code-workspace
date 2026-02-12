@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../../OneDrive/Desktop/учеба/веб"
+		},
+		{
+			"path": "../../OneDrive/Desktop/блинная"
+		},
+		{
+			"path": "../../OneDrive/Desktop/галереяВыставка"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "helloworld"
+	}
+}
