@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './subscription.html',
   styleUrl: './subscription.scss',
 })
-export class Subscription {
+export class SubscriptionComponent {
 
 }

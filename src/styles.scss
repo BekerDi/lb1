@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Gotham Pro";
+  src: url("/assets/fonts/GothamPro-Medium.woff2") format("woff2"),
+       url("/assets/fonts/GothamPro-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Jun";
+  src: url('/assets/fonts/Jun-Regular.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+
