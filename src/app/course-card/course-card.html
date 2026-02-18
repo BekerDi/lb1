@@ -1,0 +1,14 @@
+<article class="card">
+  <img class="card__img" [src]="course.image" [alt]="course.title" />
+
+  <div class="card__body">
+    <h3 class="card__title">{{ course.title }}</h3>
+    <p class="card__desc">{{ course.desc }}</p>
+
+    <span class="card__badge"
+          [class.special]="course.type === 'special'"
+          [class.podcast]="course.type === 'podcast'">
+      {{ course.type }}
+    </span>
+  </div>
+</article>
