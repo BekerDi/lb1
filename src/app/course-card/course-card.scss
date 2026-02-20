@@ -1,0 +1,268 @@
+.card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  cursor: pointer;
+  width: 371px;
+  height: 546px;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.12);
+}
+
+/* Обложка */
+.card__img {
+  display: block;
+  width: 371px;
+  height: 330px;
+  object-fit: cover;
+}
+
+/* Тело карточки (для обычных) */
+.card__body {
+  padding: 14px 14px 16px;
+  ;
+}
+
+.card__title {
+  margin: 0 0 8px;
+  font-family: 'Gotham Pro', sans-serif;
+  font-size: 27px;
+  font-weight: 500;
+  width: 371px;
+  color: #111;
+}
+
+.card__desc {
+  margin: 0;
+  font-size: 23px;
+  width: 360px;
+  font-family: "Gotham Pro", sans-serif;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 200;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+.card__badge.podcast {
+  /* можно оставить как есть */
+}
+
+.card__badge.special {
+  border-color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* ====== СПЕЦПРОЕКТ: текст поверх картинки ====== */
+.card--special {
+  background: #111;
+}
+
+/* у спецпроекта картинка выше/длиннее, как на скрине */
+.card--special .card__img {
+  height: 546px;
+  width: 371px;
+}
+
+
+
+/* градиент для читаемости текста */
+.card--special::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.78) 0%,
+    rgba(0, 0, 0, 0.25) 45%,
+    rgba(0, 0, 0, 0) 75%
+  );
+}
+.card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  cursor: pointer;
+  width: 371px;
+  height: 546px;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.12);
+}
+
+/* Обложка */
+.card__img {
+  display: block;
+  width: 371px;
+  height: 330px;
+  object-fit: cover;
+}
+
+/* Тело карточки (для обычных) */
+.card__body {
+  padding: 14px 14px 16px;
+  ;
+}
+
+.card__title {
+  margin: 0 0 8px;
+  font-family: 'Gotham Pro', sans-serif;
+  font-size: 27px;
+  font-weight: 500;
+  width: 371px;
+  color: #111;
+}
+
+.card__desc {
+  margin: 0;
+  font-size: 19px;
+  width: 360px;
+  font-family: "Gotham Pro", sans-serif;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 200;
+  height: 100px;
+
+  
+  overflow: hidden;
+}
+
+
+.card__badge.podcast {
+  /* можно оставить как есть */
+}
+
+.card__badge.special {
+  border-color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* ====== СПЕЦПРОЕКТ: текст поверх картинки ====== */
+.card--special {
+  background: #111;
+}
+
+/* у спецпроекта картинка выше/длиннее, как на скрине */
+.card--special .card__img {
+  height: 546px;
+  width: 371px;
+}
+
+
+
+/* градиент для читаемости текста */
+.card--special::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.78) 0%,
+    rgba(0, 0, 0, 0.25) 45%,
+    rgba(0, 0, 0, 0) 75%
+  );
+}
+
+/* поверх градиента */
+.card--special .card__title,
+.card--special .card__desc {
+  color: #fff;
+}
+
+.card--special .card__desc {
+  color: rgba(255, 255, 255, 0.78);
+  -webkit-line-clamp: 4;
+}
+
+/* Плашка "Спецпроект" как на скрине */
+.card__pill {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.9);
+  color: #111;
+}
+
+/* Чтоб элементы были над ::after */
+.card--special .card__pill,
+.card--special .card__title,
+.card--special .card__desc,
+.card--special .card__badge {
+  position: relative;
+  z-index: 3;
+}
+/* поверх градиента */
+.card--special .card__title,
+.card--special .card__desc {
+  color: #fff;
+}
+
+.card--special .card__desc {
+  color: rgba(255, 255, 255, 0.78);
+  width: 360px;
+  
+}
+
+/* Плашка "Спецпроект" как на скрине */
+.card__pill {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.9);
+  color: #111;
+}
+
+/* Чтоб элементы были над ::after */
+.card--special .card__pill,
+.card--special .card__title,
+.card--special .card__desc,
+.card--special .card__badge {
+  position: relative;
+  z-index: 3;
+}
+.card--special .card__body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 16px 14px 16px;
+}
+.card__like {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 5;
+
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.card__like img {
+  width: 28px;
+  height: 28px;
+}

@@ -5,6 +5,7 @@ import { CoursesComponent } from './pages/courses/courses';
 import { AboutComponent } from './pages/about/about';
 import { SubscriptionComponent } from './subscription/subscription';
 import { LecturesComponent } from './lectures/lectures';
+import { SpecPageComponent } from './spec-page/spec-page';
 import {NotFoundComponent} from './pages/not-found/not-found';
 
 export const routes: Routes = [
@@ -13,5 +14,6 @@ export const routes: Routes = [
   { path: 'about', component: AboutComponent },
   {path: 'subscription', component: SubscriptionComponent},
   {path:'lectures', component: LecturesComponent},
+  { path: 'spec-page/:id', component: SpecPageComponent },
   { path: '**', component: NotFoundComponent },
 ];
