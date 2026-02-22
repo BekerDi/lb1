@@ -2,7 +2,7 @@
 <button
   type="button"
   class="filters__btn"
-  [class.is-active]="filter === 'all'"
+  [ngClass]="{ 'is-active': filter === 'all' }"
   (click)="setFilter('all')"
 >
   Все
@@ -10,7 +10,7 @@
 <button
   type="button"
   class="filters__btn"
-  [class.is-active]="filter === 'liked'"
+  [ngClass]="{ 'is-active': filter === 'liked' }"
   (click)="setFilter('liked')"
 >
   Избранное 
@@ -18,7 +18,7 @@
 <button
   type="button"
   class="filters__btn"
-  [class.is-active]="filter === 'special'"
+  [ngClass]="{ 'is-active': filter === 'special' }"
   (click)="setFilter('special')"
 >
   Спецпроекты
@@ -26,16 +26,28 @@
 <button
   type="button"
   class="filters__btn"
-  [class.is-active]="filter === 'podcast'"
+  [ngClass]="{ 'is-active': filter === 'podcast' }"
   (click)="setFilter('podcast')"
 >
   Подкасты
 </button>
 </section>
 
-<section class="cards">
+  <section class="cards" *ngIf="filteredItems.length > 0; else empty"
+    >
+  <div class="card-wrap"
+       *ngFor="let item of filteredItems"
+       [ngStyle]="{
+      'box-shadow': item.liked
+        ? '0 12px 30px rgba(0,0,0,0.15)'
+        : '0 8px 20px rgba(0,0,0,0.08)',
+      'transform': item.liked ? 'scale(1.02)' : 'scale(1)',
+      'transition': '0.3s'
+       
+    }"
+       >
+
   <app-course-card
-    *ngFor="let item of filteredItems"
     [id]="item.id"
     [title]="item.title"
     [image]="item.image"
@@ -44,4 +56,8 @@
     [liked]="item.liked"
     (likedChange)="item.liked = $event"
   ></app-course-card>
-</section>
+  </div>
+   </section>
+<ng-template #empty>
+  <p class="empty">По этому фильтру пока ничего нет.</p>
+</ng-template>

@@ -1,16 +1,14 @@
 <article class="card"
-        (mouseenter)="isHovered = true"
+  (mouseenter)="isHovered = true"
   (mouseleave)="isHovered = false"
   [style.transform]="isHovered ? 'translateY(-2px)' : 'translateY(0)'"
   [style.boxShadow]="isHovered
     ? '0 16px 34px rgba(0, 0, 0, 0.12)'
     : '0 10px 28px rgba(0, 0, 0, 0.08)'"
+  [class.card--special]="type === 'special'"
+  [attr.data-type]="type"
   (click)="onCardClick()"
-          
-         [class.card--special]="type === 'special'"
-         [attr.data-type]="type"
-         (click)="onCardClick()">
-
+>
   <img class="card__img" [src]="image" [alt]="title" />
 
   <button class="card__like" type="button" (click)="toggleLike($event)">
@@ -18,7 +16,22 @@
   </button>
 
   <div class="card__body">
-    <span class="card__pill" *ngIf="type === 'special'">Спецпроект</span>
+
+    <!-- ngSwitch ВОТ ТУТ, внутри body -->
+    <div [ngSwitch]="type">
+      <span *ngSwitchCase="'special'" class="card__pill card__pill--special">
+        Спецпроект
+      </span>
+
+      <span *ngSwitchCase="'podcast'" class="card__pill card__pill--podcast">
+        Подкаст
+      </span>
+
+      <span *ngSwitchDefault class="card__pill">
+        Курс
+      </span>
+    </div>
+
     <h3 class="card__title">{{ title }}</h3>
     <p class="card__desc">{{ desc }}</p>
   </div>
