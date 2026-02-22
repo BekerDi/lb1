@@ -1,19 +1,40 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-course-card',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule],
   templateUrl: './course-card.html',
   styleUrls: ['./course-card.scss'],
 })
 export class CourseCardComponent {
-  @Input() course: any; 
+  isHovered = false;
 
-  toggleLike(event: Event){
-  event.stopPropagation();     
-  this.course.liked = !this.course.liked;
-}
+  
+  @Input() id = 0;
+  @Input() title = '';
+  @Input() image = '';
+  @Input() desc = '';
+  @Input() type: 'special' | 'podcast' = 'podcast';
+
+  @Input() liked = false;
+  
+@Output() likedChange = new EventEmitter<boolean>();
+
+  constructor(private router: Router) {}
+
+  onCardClick() {
+    if (this.type === 'special') {
+      this.router.navigate(['/spec-page', this.id]);
+    }
+  }
+
+  toggleLike(event: Event) {
+    event.stopPropagation();
+    this.likedChange.emit(!this.liked);
+  }
 }

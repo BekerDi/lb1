@@ -1,22 +1,25 @@
-<article
-  class="card"
-  [class.card--special]="course.type === 'special'"
-  [routerLink]="course.type === 'special' ? ['/spec-page', course.id] : null"
->
-  <img class="card__img" [src]="course.image" [alt]="course.title" />
-  <button class="card__like" (click)="toggleLike($event)">
-  <img
-    [src]="course.liked ? 'hearto.png' : 'heartf.png'"
-    alt="like"
-  >
-</button>
+<article class="card"
+        (mouseenter)="isHovered = true"
+  (mouseleave)="isHovered = false"
+  [style.transform]="isHovered ? 'translateY(-2px)' : 'translateY(0)'"
+  [style.boxShadow]="isHovered
+    ? '0 16px 34px rgba(0, 0, 0, 0.12)'
+    : '0 10px 28px rgba(0, 0, 0, 0.08)'"
+  (click)="onCardClick()"
+          
+         [class.card--special]="type === 'special'"
+         [attr.data-type]="type"
+         (click)="onCardClick()">
+
+  <img class="card__img" [src]="image" [alt]="title" />
+
+  <button class="card__like" type="button" (click)="toggleLike($event)">
+    <img [src]="liked ? 'hearto.png' : 'heartf.png'" alt="like">
+  </button>
 
   <div class="card__body">
-    <span class="card__pill" *ngIf="course.type === 'special'">
-      Спецпроект
-    </span>
-
-    <h3 class="card__title">{{ course.title }}</h3>
-    <p class="card__desc">{{ course.desc }}</p>
+    <span class="card__pill" *ngIf="type === 'special'">Спецпроект</span>
+    <h3 class="card__title">{{ title }}</h3>
+    <p class="card__desc">{{ desc }}</p>
   </div>
 </article>

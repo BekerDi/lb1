@@ -1,6 +1,47 @@
+<section class = "filter">
+<button
+  type="button"
+  class="filters__btn"
+  [class.is-active]="filter === 'all'"
+  (click)="setFilter('all')"
+>
+  Все
+</button>
+<button
+  type="button"
+  class="filters__btn"
+  [class.is-active]="filter === 'liked'"
+  (click)="setFilter('liked')"
+>
+  Избранное 
+</button>
+<button
+  type="button"
+  class="filters__btn"
+  [class.is-active]="filter === 'special'"
+  (click)="setFilter('special')"
+>
+  Спецпроекты
+</button>
+<button
+  type="button"
+  class="filters__btn"
+  [class.is-active]="filter === 'podcast'"
+  (click)="setFilter('podcast')"
+>
+  Подкасты
+</button>
+</section>
+
 <section class="cards">
   <app-course-card
-    *ngFor="let item of items"
-    [course]="item">
-  </app-course-card>
+    *ngFor="let item of filteredItems"
+    [id]="item.id"
+    [title]="item.title"
+    [image]="item.image"
+    [desc]="item.desc"
+    [type]="item.type"
+    [liked]="item.liked"
+    (likedChange)="item.liked = $event"
+  ></app-course-card>
 </section>
