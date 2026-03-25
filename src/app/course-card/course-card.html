@@ -17,7 +17,6 @@
 
   <div class="card__body">
 
-    <!-- ngSwitch ВОТ ТУТ, внутри body -->
     <div [ngSwitch]="type">
       <span *ngSwitchCase="'special'" class="card__pill card__pill--special">
         Спецпроект
@@ -25,10 +24,6 @@
 
       <span *ngSwitchCase="'podcast'" class="card__pill card__pill--podcast">
         Подкаст
-      </span>
-
-      <span *ngSwitchDefault class="card__pill">
-        Курс
       </span>
     </div>
 

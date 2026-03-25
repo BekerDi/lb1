@@ -1,0 +1,31 @@
+<app-comment-shell>
+  <section class="comments">
+    <h2 class="comments__title">Комментарии</h2>
+
+    <div class="comments__form">
+      <input
+        class="comments__input"
+        placeholder="Напишите комментарий…"
+        [(ngModel)]="newComment"
+        (keydown.enter)="addComment()"
+      />
+
+      <button class="comments__btn" type="button" (click)="addComment()">
+        Отправить
+      </button>
+    </div>
+
+    <div class="comments__list">
+      <article class="comment" *ngFor="let c of comments; let i = index">
+        <div class="comment__meta">
+          <span class="comment__date">{{ c.createdAt | date:'dd.MM.yyyy HH:mm' }}</span>
+          <button class="comment__delete" type="button" (click)="removeComment(i)">
+            Удалить
+          </button>
+        </div>
+
+        <p class="comment__text">{{ c.text }}</p>
+      </article>
+    </div>
+  </section>
+</app-comment-shell>

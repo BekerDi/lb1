@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LecturesComponent } from './lectures';
+import { CommentShell } from './comment-shell';
 
-describe('Lectures', () => {
-  let component: LecturesComponent;
-  let fixture: ComponentFixture<LecturesComponent>;
+describe('CommentShell', () => {
+  let component: CommentShell;
+  let fixture: ComponentFixture<CommentShell>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LecturesComponent]
+      imports: [CommentShell]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(LecturesComponent);
+    fixture = TestBed.createComponent(CommentShell);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
@@ -20,5 +20,4 @@ describe('Lectures', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  
 });

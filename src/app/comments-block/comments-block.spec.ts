@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LecturesComponent } from './lectures';
+import { CommentsBlock } from './comments-block';
 
-describe('Lectures', () => {
-  let component: LecturesComponent;
-  let fixture: ComponentFixture<LecturesComponent>;
+describe('CommentsBlock', () => {
+  let component: CommentsBlock;
+  let fixture: ComponentFixture<CommentsBlock>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LecturesComponent]
+      imports: [CommentsBlock]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(LecturesComponent);
+    fixture = TestBed.createComponent(CommentsBlock);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
@@ -20,5 +20,4 @@ describe('Lectures', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  
 });

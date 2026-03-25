@@ -8,6 +8,7 @@
   cursor: pointer;
   width: 371px;
   height: 546px;
+  &:hover{background-color: bisque;}
 }
 
 
@@ -51,7 +52,7 @@
 
 
 .card__badge.podcast {
-  /* можно оставить как есть */
+ 
 }
 
 .card__badge.special {
@@ -73,7 +74,7 @@
 
 
 
-/* градиент для читаемости текста */
+
 .card--special::after {
   content: "";
   position: absolute;
@@ -141,7 +142,7 @@
 
 
 .card__badge.podcast {
-  /* можно оставить как есть */
+  
 }
 
 .card__badge.special {
@@ -155,15 +156,13 @@
   background: #111;
 }
 
-/* у спецпроекта картинка выше/длиннее, как на скрине */
+
 .card--special .card__img {
   height: 546px;
   width: 371px;
 }
 
 
-
-/* градиент для читаемости текста */
 .card--special::after {
   content: "";
   position: absolute;
@@ -177,7 +176,7 @@
   );
 }
 
-/* поверх градиента */
+
 .card--special .card__title,
 .card--special .card__desc {
   color: #fff;
@@ -188,7 +187,6 @@
   -webkit-line-clamp: 4;
 }
 
-/* Плашка "Спецпроект" как на скрине */
 .card__pill {
   display: inline-block;
   margin-bottom: 10px;
@@ -200,7 +198,7 @@
   color: #111;
 }
 
-/* Чтоб элементы были над ::after */
+
 .card--special .card__pill,
 .card--special .card__title,
 .card--special .card__desc,
@@ -208,7 +206,7 @@
   position: relative;
   z-index: 3;
 }
-/* поверх градиента */
+
 .card--special .card__title,
 .card--special .card__desc {
   color: #fff;
@@ -262,4 +260,7 @@
 .card__like img {
   width: 28px;
   height: 28px;
+}
+.card[data-type="special"] {
+  border: 2px solid black;
 }
